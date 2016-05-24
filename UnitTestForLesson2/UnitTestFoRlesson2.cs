@@ -35,5 +35,19 @@ namespace UnitTestForLesson2
             // Assert
             Assert.AreEqual(expectedResult, result);
         }
+        [TestMethod]
+        public void readUntilEndTestMethod()
+        {
+            // Arrange
+            int numberOfEntries = 5;
+            int expectedCount = 5;
+            int actualCount = 0;
+
+            // Act
+            actualCount = Program.readUntilEnd(numberOfEntries);
+
+            // Assert
+            Assert.AreEqual(expectedCount, actualCount);
+        }
     }
 }
