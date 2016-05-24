@@ -25,6 +25,7 @@ namespace COMP123_S2016_Lesson2
          * 
          * @constructor Main
          * @param  {string[]} args
+         * @return {void}
          */
         static void Main(string[] args)
         {
@@ -50,6 +51,7 @@ namespace COMP123_S2016_Lesson2
             {
                 readUntilEnd(numberOfEntries);
             }
+            readUntilEnd();
         }
 
         /**
@@ -58,6 +60,7 @@ namespace COMP123_S2016_Lesson2
          * @method addXandY
          * @param {int} firstNumber
          * @param {int} secondNumber
+         * @return {int}
          */
         public static int addXandY(int firstNumber, int secondNumber)
         {
@@ -72,6 +75,7 @@ namespace COMP123_S2016_Lesson2
          * @method addYtoX
          * @param {ref int} X
          * @param {ref int} Y
+         * @return {int}
          */
         public static int addYtoX(ref int X, ref int Y)
         {
@@ -79,6 +83,14 @@ namespace COMP123_S2016_Lesson2
             return X;
         }
 
+        /**
+         * this method allows the user to make a variable number of 
+         * string entries into a string array
+         * 
+         * @method readUntilEnd
+         * @param {int} numberOfEntries
+         * @return {int}
+         */
         public static int readUntilEnd(int numberOfEntries)
         {
             //variable declaration
@@ -94,6 +106,31 @@ namespace COMP123_S2016_Lesson2
                 inputCounter++;
             } while (inputs[inputCounter - 1] != "end" && inputCounter < numberOfEntries);
             return inputCounter;
+        }
+        /**
+        * this method allows the user to enter five strings
+        * and places them into a string array
+        * 
+        * @method readUntilEnd
+        * @param {int} numberOfEntries
+        * @return {int}
+        */
+        public static string[] readUntilEnd()
+        {
+            //variable declaration
+            int numberOfEntries = 5;
+            string[] inputs = new string[numberOfEntries];
+            int inputCounter = 0;
+
+            // execution of code
+            do
+            {
+                Console.WriteLine("Enter a value ('end' to stop)");
+                inputs[inputCounter] = "";
+                inputs[inputCounter] = Console.ReadLine();
+                inputCounter++;
+            } while (inputs[inputCounter - 1] != "end" && inputCounter < numberOfEntries);
+            return inputs;
         }
     }
 }
